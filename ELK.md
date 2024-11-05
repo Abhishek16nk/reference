@@ -15,6 +15,9 @@ bash
 Copy code
 sudo yum install java-1.8.0-openjdk-devel -y
 
+sudo yum install -y java-1.8.0-amazon-corretto-devel
+
+
 -----------------------------------------------------------------------
 Download and Install Elasticsearch:
 
