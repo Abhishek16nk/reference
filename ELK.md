@@ -31,6 +31,20 @@ sudo rpm --install elasticsearch-8.15.3-x86_64.rpm
 
 Configure Elasticsearch: Edit the configuration file to bind to your EC2 public IP or 0.0.0.0 in /etc/elasticsearch/elasticsearch.yml:
 
+-----------------------
+wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-8.11.3-linux-x86_64.tar.gz
+
+wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-8.11.3-linux-x86_64.tar.gz.sha512
+
+shasum -a 512 -c elasticsearch-8.11.3-linux-x86_64.tar.gz.sha512 
+
+tar -xzf elasticsearch-8.11.3-linux-x86_64.tar.gz
+
+cd elasticsearch-8.11.3/
+
+./bin/elasticsearch
+-----------------------------------------------------
+
 yaml
 Copy code
 network.host: 0.0.0.0
