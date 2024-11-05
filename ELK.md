@@ -23,13 +23,8 @@ Download and Install Elasticsearch:
 
 bash
 Copy code
-wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.x.x-x86_64.rpm
+wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-8.15.3-x86_64.rpm
 
-
-wget https://www.elastic.co/downloads/elasticsearch/elasticsearch-8.15.3-x86_64.rpm
-
-
-[https://www.elastic.co/downloads/elasticsearch/elasticsearch-8.15.3-x86_64.rpm](https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.x.x-x86_64.rpm)
 
 sudo rpm --install elasticsearch-7.x.x-x86_64.rpm
 
