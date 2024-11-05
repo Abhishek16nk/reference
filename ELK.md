@@ -26,7 +26,8 @@ Copy code
 wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-8.15.3-x86_64.rpm
 
 
-sudo rpm --install elasticsearch-7.x.x-x86_64.rpm
+sudo rpm --install elasticsearch-8.15.3-x86_64.rpm
+
 
 Configure Elasticsearch: Edit the configuration file to bind to your EC2 public IP or 0.0.0.0 in /etc/elasticsearch/elasticsearch.yml:
 
