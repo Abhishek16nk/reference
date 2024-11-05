@@ -43,6 +43,8 @@ tar -xzf elasticsearch-8.11.3-linux-x86_64.tar.gz
 cd elasticsearch-8.11.3/
 
 ./bin/elasticsearch
+
+
 -----------------------------------------------------
 
 yaml
