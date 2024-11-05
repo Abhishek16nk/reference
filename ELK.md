@@ -56,3 +56,52 @@ bash
 Copy code
 sudo systemctl start kibana
 sudo systemctl enable kibana
+
+
+==================================================================================================================
+
+Security group:
+
+To ensure that your EC2 instance hosting the ELK stack allows traffic on the necessary ports (9200 for Elasticsearch and 5601 for Kibana), you'll need to modify the security group associated with that EC2 instance. Here are the steps to do this:
+
+Step 1: Identify Your EC2 Instance Security Group
+Log in to the AWS Management Console.
+Navigate to the EC2 Dashboard.
+Find your EC2 instance running the ELK stack in the Instances section.
+Select the instance and look for the Security Groups associated with it in the description tab at the bottom.
+
+Step 2: Modify the Security Group
+Click on the security group link to open its details.
+Go to the Inbound Rules tab.
+Click on the Edit inbound rules button.
+
+Step 3: Add Rules for Elasticsearch and Kibana
+Add Rule for Elasticsearch:
+
+Click on Add rule.
+Type: Custom TCP
+Protocol: TCP
+Port range: 9200
+Source: Choose either:
+My IP: if you want to allow access only from your IP address.
+Custom: Enter the CIDR range of IPs you want to allow access (e.g., 0.0.0.0/0 for all IPs, but this is not recommended for production).
+Description: (optional) Add a note like "Allow Elasticsearch access".
+
+Add Rule for Kibana:
+
+Click on Add rule.
+Type: Custom TCP
+Protocol: TCP
+Port range: 5601
+Source: Choose the same option as above (e.g., your IP, or a specific CIDR range).
+Description: (optional) Add a note like "Allow Kibana access".
+
+Step 4: Save Changes
+After adding the rules, click on the Save rules button to apply the changes.
+
+after installing kibana and elastic search:
+ 
+Step 5: Verify Connectivity
+After the rules are saved, verify that you can access Elasticsearch and Kibana from your browser using:
+For Elasticsearch: http://<your-ec2-public-ip>:9200
+For Kibana: http://<your-ec2-public-ip>:5601
