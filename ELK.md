@@ -128,3 +128,30 @@ Step 5: Verify Connectivity
 After the rules are saved, verify that you can access Elasticsearch and Kibana from your browser using:
 For Elasticsearch: http://<your-ec2-public-ip>:9200
 For Kibana: http://<your-ec2-public-ip>:5601
+
+
+
+
+
+
+helm
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-app-ingress
+  namespace: default
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: <YOUR_DOMAIN_NAME>
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: <YOUR_SERVICE_NAME>
+            port:
+              number: 80
